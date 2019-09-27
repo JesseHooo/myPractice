@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style/reset.css" />
+    <title>Document</title>
+    <style>
+        body {
+            width: 400px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            width: 50%;
+            height: 30px;
+        }
+        
+        #box {
+            width: 100%;
+            /* height: 200px; */
+            /* padding: 100px 0; */
+            /*padding同样影响宽度*/
+            background-color: rgb(86, 141, 158);
+            overflow: hidden;
+        }
+        
+        .transition {
+            -o-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+        
+        .fadeOut {
+            opacity: 0 !important;
+            visibility: 0 !important;
+        }
+        
+        .slideUp {
+            height: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .slideLeft {
+            width: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn-show" class="btn">显示</button><button id="btn-hide" class="btn">隐藏</button>
+    <div id="box">
+        <p>woyaorenhenxuexi!</p>
+        <p>woyaorenhenxuexi!</p>
+        <p>woyaorenhenxuexi!</p>
+        <p>woyaorenhenxuexi!</p>
+        <p>woyaorenhenxuexi!</p>
+        <p>woyaorenhenxuexi!</p>
+        <p>woyaorenhenxuexi!</p>
+    </div>
+    <script src="http://lib.sinaapp.com/js/jquery/1.7/jquery.js"></script>
+    <script src="scripts/transition.js"></script>
+    <script src="scripts/showHide.js"></script>
+</body>
+<script>
+    // console.log(window.nbapage.transition)
+    var $box = $('#box');
+    $box.showHide({
+        js: true,
+        css3: true,
+        animation: 'fadeSlideUpDown',
+        delay: 100,
+    })
+
+    // $('#btn-show').on('click', function() {
+    //     silent.show($box, $box.html('<p>我要显示了</p>'), setTimeout(function() {
+    //         $box.html($box.html() + "<p>我已经显示了</p>");
+    //     }, 1000))
+    // });
+    $('#btn-show').on('click', function() {
+        $box.showHide('show');
+    });
+    $('#btn-hide').on('click', function() {
+        $box.showHide('hide');
+    });
+
+    $box.on('show shown hide hidden', function(e) {
+        console.log(e)
+            // if (e.type === 'show') {//e.type获取事件的类型
+            //     $box.html('<p>我要显示了</p>')
+            // }
+            // if (e.type === 'shown') {
+            //     setTimeout(function() {
+            //         $box.html($box.html() + "<p>我已经显示了</p>");
+            //     }, 1000)
+            // }
+    })
+</script>
+
+</html>

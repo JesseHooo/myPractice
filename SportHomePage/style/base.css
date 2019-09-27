@@ -1,0 +1,43 @@
+/*网站导航基础*/
+
+.header {
+    z-index: 20;
+    height: 120px;
+    width: 100%;
+    background: #006bb7;
+}
+
+.header-bg {
+    position: absolute;
+    /*居中方法
+            left: 50%;
+            margin-left: -600px;
+            */
+    left: 50%;
+    margin-left: -600px;
+    width: 1200px;
+    height: 120px;
+    background: url(../images/header-bg.jpg);
+}
+
+
+/*内容大div*/
+
+.main-content {
+    width: 100%;
+    background: url(../images/bcg.jpg) #f6f6f6 center 0 no-repeat;
+}
+
+.content {
+    position: relative;
+    height: 1000px;
+    width: 1220px;
+    left: 50%;
+    margin-left: -610px;
+    margin-top: 50px;
+    background: url(../images/shengxiade.png) no-repeat;
+}
+
+.section {
+    margin-top: 15px;
+}

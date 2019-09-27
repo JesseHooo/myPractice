@@ -1,0 +1,872 @@
+/* 网站导航 */
+
+.header-wrap {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.header-main {
+    position: relative;
+    height: 80px;
+}
+
+.header-logo {
+    height: 80px;
+    float: left;
+}
+
+.header-logo .link-china {
+    padding-left: 45px;
+    padding-top: 9px;
+    height: 71px;
+    width: 250px;
+    float: left;
+}
+
+.header-logo .link-china img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-logo .link-nba {
+    margin: 35px 0 0 14px;
+    float: left;
+    height: 25px;
+    width: 60.7px;
+}
+
+.header-logo .link-nba img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-button {
+    padding-top: 10px;
+    height: 70px;
+    float: right;
+}
+
+.header-button span {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+a.button-ballfans {
+    display: block;
+    width: 64px;
+    height: 19px;
+    background: url(../images/button-logo.jpg) -4px -4px;
+}
+
+.button-jrnba {
+    display: block;
+    width: 36px;
+    height: 19px;
+    background: url(../images/button-logo.jpg) -79px -4px;
+}
+
+.button-nbaapp {
+    display: block;
+    width: 42px;
+    height: 19px;
+    background: url(../images/button-logo.jpg) -125px -4px;
+}
+
+.button-ttnba {
+    display: block;
+    width: 68px;
+    height: 19px;
+    background: url(../images/button-logo.jpg) -177px -4px;
+}
+
+.button-nbaplayzone {
+    display: block;
+    width: 68px;
+    height: 19px;
+    background: url(../images/button-logo.jpg) -255px -4px;
+}
+
+.button-nbastore {
+    display: block;
+    width: 76px;
+    height: 19px;
+    background: url(../images/button-logo.jpg) -333px -4px no-repeat;
+}
+
+
+/* 菜单栏下拉图标 */
+
+
+/* .dropdownActive .nav-menu {
+    display: block
+} */
+
+.dropdown>.dropdown-arrow {
+    background: url(../images/arrow-gray.png) no-repeat 45px 11px
+}
+
+.dropdown>.dropdown-arrow.dropdownActive {
+    color: #00aeff;
+    background: url(../images/arrow-blue.png) no-repeat 45px 11px
+}
+
+
+/* nbastore小三角下拉图标 */
+
+.button-nbastore>.dropdown-arrow {
+    margin-top: 7px;
+    /* 
+    width: 9px;
+    height: 6px;
+    background: url(../images/arrow-down-solid.png) no-repeat; */
+    /* 使用自制三角形减少http请求 */
+    width: 0;
+    height: 0;
+    border-top: 6px solid #fff;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: none;
+    float: right;
+}
+
+.button-nbastore>.dropdown-arrow.dropdownActive {
+    /* background: url(../images/arrow-on-solid.png) no-repeat; */
+    border-bottom: 6px solid #fff;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: none;
+}
+
+
+/* 下拉列表样式 */
+
+.menu-style {
+    z-index: 1;
+    /*阴影 x y 模糊度*/
+    box-shadow: 0 0 3px #002651;
+    -webkit-box-shadow: 0 0 3px #002651;
+    /*chrome,Safari:*/
+    -moz-box-shadow: 0 0 3px #002651;
+    /*Firefox*/
+    -ms-box-shadow: 0 0 3px #002651;
+    /*IE*/
+}
+
+
+/* nbastore下拉菜单特性样式 */
+
+.nbastore-menu {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 0px;
+}
+
+
+/* .dropdownActive .nbastore-menu {
+    display: blocknav-logo
+} */
+
+.menu-style a {
+    display: block;
+    height: 40px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    line-height: 40px;
+    background: #002f50
+}
+
+.menu-style a:hover {
+    background: #2464b5;
+}
+
+.nav {
+    padding-left: 40px;
+    padding-top: 5px;
+    height: 35px;
+    /* background: yellow; */
+    position: relative;
+}
+
+.nav-wrap {
+    height: 20px;
+    float: left;
+}
+
+.nav-table>li {
+    position: relative;
+    float: left;
+    margin-right: 23px;
+    height: 40px;
+}
+
+.nav-table>li>a {
+    display: block;
+    padding-left: 10px;
+    padding-right: 15px;
+    height: 35px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav-table>li>a:hover {
+    color: #00aeff;
+}
+
+
+/* 导航下拉菜单特性样式 */
+
+.nav-menu {
+    z-index: 999;
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    width: 160px
+}
+
+
+/*下拉小三角伪类*/
+
+
+.nav-menu:before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: url(../images/arrow-deepblue.png) no-repeat;
+}
+
+
+/*搜索栏*/
+
+.nav-side {
+    height: 37px;
+    width: 230px;
+    float: right;
+    background: #006bb7;
+    margin-top: -2px;
+}
+
+.side-search {
+    height: 30px;
+    width: 190px;
+    float: left;
+    margin-right: 10px;
+}
+
+.btn-search {
+    border: 1px solid transparent;
+    outline: none;
+    float: right;
+    display: block;
+    height: 30px;
+    width: 35px;
+    border-radius: 15px 0 0 15px;
+    cursor: pointer;
+    background: #006bb7 url(../images/search.png) 4px 1px no-repeat;
+    background-size: 27px 27px;
+}
+
+.clickActive.btn-search {
+    background: white url(../images/search-active.png) 4px 1px no-repeat;
+    background-size: 27px 27px;
+}
+
+.side-search .search-ipt {
+    padding: 0;
+    width: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border: none;
+    box-sizing: content-box!important;
+    border-radius: 0 15px 15px 0;
+    outline: 0;
+    float: right;
+}
+
+.user-menu {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    right: -10px;
+    padding: 0 10px;
+    width: 140px;
+    height: 80px;
+    background: #002f50;
+}
+
+.btn-user {
+    display: block;
+    height: 37px;
+    width: 30px;
+    background: url(../images/btn-user.png) no-repeat
+}
+
+.side-user {
+    height: 30px;
+    width: 30px;
+    float: right;
+}
+
+.user-menu:before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 130px;
+    width: 12px;
+    height: 6px;
+    background: url(../images/arrow-deepblue.png) no-repeat;
+}
+
+.user-info {
+    height: 44px;
+    line-height: 44px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    color: #fff;
+    font-size: 10px；
+}
+
+.user-login {
+    height: 36px;
+}
+
+#qqLoginBtn {
+    text-decoration: none;
+    height: 26px;
+    width: 140px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px;
+    background: #0079cd;
+    display: block;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    /*取消点击后的轮廓*/
+}
+
+
+/* 固定头部 */
+
+.fixed-header {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #2464b5;
+    display: block;
+    visibility: hidden;
+}
+
+.nav-logo {
+    float: left;
+    padding-right: 30;
+}
+
+.nav-fixed {
+    padding-left: 30px;
+    padding-top: 13px;
+    height: 35px;
+    float: left;
+    /* background: yellow; */
+    position: relative;
+}
+
+.side-user-fixed {
+    padding-top: 10px;
+    height: 30px;
+    width: 30px;
+    float: right;
+}
+
+
+/*下拉动画隐藏样式*/
+
+/* .dropdownLayer {
+    overflow: hidden;
+} */
+
+.transition {
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.fadeOut {
+    opacity: 0 !important;
+    visibility: 0 !important;
+}
+
+.slideUp {
+    height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.slideLeft {
+    width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/*  中间内容区*/
+
+.wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 15px 10px 0;
+    background: #fff;
+}
+
+.sched {
+    width: 1200px;
+    height: 126px;
+    overflow: hidden;
+    border-top: solid 1px #dadada;
+    border-bottom: solid 1px #cbcbcb;
+    box-shadow: 0 3px 7px #adadad;
+    -moz-box-shadow: 0 3px 7px #adadad;
+    -ms-box-shadow: 0 3px 7px #adadad;
+    -webkit-box-shadow: 0 3px 7px #adadad;
+    font-size: 14px;
+}
+
+
+/* footer */
+
+#copyright-tab {
+    width: 100%;
+    height: 250px;
+    background: url(../images/footer-bg_90221b.png) no-repeat center 0 #012f50;
+}
+
+.copyright-tab {
+    margin: 0 auto;
+    width: 1200px;
+    height: 250px;
+}
+
+.copyright-tab>div {
+    height: 250px;
+    float: left;
+}
+
+.copyright-tab .table-list {
+    width: 210px;
+}
+
+.copyright-tab .tab-sport-app,
+.copyright-tab .table-nba-app {
+    width: 180px;
+}
+
+.copyright-tab span {
+    height: 65px;
+    line-height: 65px;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+}
+
+.copyright-tab .tab-sport-app span,
+.copyright-tab .table-nba-app span {
+    padding-left: 20px;
+}
+
+.copyright-tab a {
+    margin-bottom: 7px;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+}
+
+.copyright-tab img {
+    width: 110px;
+    height: 110px;
+    padding-left: 15px;
+}
+
+#copyright-content {
+    width: 100%;
+    height: 165px;
+    background: #1f2428;
+}
+
+.copyright-content {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 1200px;
+    height: 145px;
+}
+
+.copyright-content p {
+    line-height: 25px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+}
+
+.copyright-content a {
+    color: #356da0;
+}
+
+.copyright-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* 图片新闻 */
+
+#mod-img-impnews {
+    margin: 0 10px 0 20px;
+    width: 360px;
+    height: 330px;
+    overflow: hidden;
+    float: left;
+}
+
+#mod-img-impnews ul {
+    margin-top: -10px;
+}
+
+#mod-img-impnews ul li {
+    height: 87px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#mod-img-impnews ul li a {
+    padding: 10px 0;
+    height: 67px;
+    font-size: 14px;
+    display: block;
+}
+
+#mod-img-impnews ul li a:hover {
+    color: #2464b5;
+}
+
+#mod-img-impnews ul li a img {
+    margin-right: 10px;
+    width: 92px;
+    height: 67px;
+    float: left;
+}
+
+#mod-img-impnews ul li a i {
+    margin-top: 10px;
+    width: 258px;
+    font-style: normal;
+    float: left;
+}
+
+
+/* 文字新闻 */
+
+#mod-impnews {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 300px;
+    float: left;
+}
+
+.impnews-title {
+    padding-left: 26px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    background: url(../images/impnews-bg.png) no-repeat;
+}
+
+.impnews-title i {
+    margin-right: 10px;
+    padding-left: 25px;
+    font-size: 14px;
+    font-style: normal;
+    background: url(../images/icon_refresh_white.png) no-repeat 0 12px;
+    cursor: pointer;
+    float: right;
+}
+
+.impnews-wrap {
+    padding-top: 5px;
+    height: 285px;
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.hide {
+    display: none;
+}
+
+.impnews-wrap li {
+    line-height: 28px;
+}
+
+.impnews-wrap li a {
+    padding: 0 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.impnews-wrap li a:hover {
+    color: #2464b5;
+}
+
+
+/* 新闻综述 */
+
+.news-layout {
+    float: left;
+    background: #fff;
+    width: 900px;
+    height: auto;
+}
+
+.news-layout h2.new-title {
+    width: 880px;
+    position: relative;
+    padding-right: 10px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.news-layout h2 a.on {
+    border-bottom-color: #e11647;
+}
+
+.news-layout h2 .news-title-tab {
+    background: url(../images/news-title-ico1.png) no-repeat 0 center;
+}
+
+.news-layout h2 .news-title-tab,
+.news-layout h2 .videos-title-tab {
+    font-size: 22px;
+    padding-left: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 3px solid #fff;
+    float: left;
+}
+
+.news-layout h2 a {
+    color: #2464b5;
+}
+
+.news-layout h2 .team-news-tab {
+    margin-left: 20px;
+    float: left;
+}
+
+.news-layout h2 .follow-team-btn {
+    padding-right: 20px;
+    height: 39px;
+    line-height: 39px;
+    background: url(../images/icon_16_addteam_.png) no-repeat right center;
+    float: right;
+}
+
+.switch-wrapper {
+    padding-right: 10px;
+    text-align: right;
+}
+
+.switch-wrapper .switch-to-next {
+    text-align: right;
+    display: inline-block;
+    width: 66px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #2464b5;
+    background: url(../images/switch-icon_blue.png) no-repeat 0 50%;
+}
+
+#news .news-page {
+    overflow: hidden;
+    font-size: 0;
+}
+
+#news .news-page a {
+    margin: 0 10px 10px 0;
+    display: inline-block;
+    position: relative;
+}
+
+#news .first-row {
+    overflow: hidden;
+    width: 440px;
+    height: 314px;
+}
+
+#news .first-row:hover img {
+    transition: all 0.6s;
+    transform: scale(1.1);
+}
+
+#news .first-row img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s;
+}
+
+#news .first-row .news-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    font-size: 18px;
+    height: 78px;
+    background: linear-gradient(0deg, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0));
+}
+
+#news .news-page .normal-news {
+    background: url(../images/news-title-ico2.png) no-repeat 15px 50%;
+}
+
+#news .news-title span {
+    line-height: 86px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 45px;
+}
+
+#news .second-row {
+    float: left;
+    width: 290px;
+}
+
+#news .second-row:hover img {
+    transition: all 0.6s;
+    transform: scale(1.1);
+}
+
+#news .second-row:hover span {
+    color: #2464b5;
+}
+
+#news .second-row .img-wrapper {
+    display: inline-block;
+    width: 290px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+#news .second-row .news-title {
+    line-height: 24px;
+    font-size: 16px;
+    display: inline-block;
+    width: 268px;
+    padding: 10px;
+    height: 85px;
+    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#news .second-row .extra-info.news-icon {
+    background: url(../images/news-title-ico3.png) no-repeat 10px 50%;
+}
+
+#news .second-row .extra-info {
+    text-align: right;
+    font-size: 12px;
+    width: 250px;
+    padding: 10px 10px 10px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 16px;
+}
+
+#news .second-row img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s;
+}
+
+iframe {
+    border: none;
+}
+
+
+/* 右侧导航块 */
+
+.side-floor {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    margin-top: -98px;
+    width: 80px;
+    height: 197px;
+}
+
+.side-floor a {
+    height: 40px;
+    border-bottom: 1px solid #002f50;
+    display: block;
+}
+
+.side-floor a:hover {
+    background-color: #0079cd;
+}
+
+.side-floor .floor-top {
+    margin-bottom: 4px;
+    height: 30px;
+    border: none;
+    background: url(../images/icon_16_arrow_up_white_.png) no-repeat center #2464b5;
+}
+
+.side-floor .floor-ballfans {
+    background: url(../images/ball-fans-icon-pc.png) no-repeat center #2464b5;
+}
+
+.side-floor .floor-jrnba {
+    background: url(../images/jrnba-icon-pc.png) no-repeat center #2464b5;
+}
+
+.side-floor .floor-nbaapp {
+    background: url(../images/nbaapp-icon-pc.png) no-repeat center #2464b5;
+}
+
+.side-floor .floor-nbastore {
+    background: url(../images/nbastore-icon-pc.png) no-repeat center #2464b5;
+    border: none;
+}

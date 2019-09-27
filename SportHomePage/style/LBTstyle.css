@@ -1,0 +1,103 @@
+/* 轮播图样式 */
+
+.scrollImg {
+    float: left;
+    position: relative;
+    width: 510px;
+    height: 330px;
+    overflow: hidden;
+}
+
+.scrollImg-nav {
+    font-size: 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+    _bottom: 9px;
+    list-style-type: none;
+    z-index: 2;
+}
+
+.scrollImg-nav a {
+    color: #fff;
+}
+
+.scrollImg-nav li.current {
+    background-color: #fff;
+}
+
+.scrollImg-content {
+    position: absolute;
+    width: 2550px;
+    list-style-type: none;
+}
+
+.scrollImg-nav li {
+    cursor: pointer;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgb(201, 201, 201);
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.scrollImg-content li {
+    position: relative;
+    float: left;
+}
+
+.scrollImg-mask {
+    position: absolute;
+    width: 100%;
+    height: 82px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0));
+    /*透明渐变*/
+    z-index: 1;
+}
+
+.scrollImg-content h3 {
+    position: absolute;
+    bottom: 36px;
+    left: 20px;
+    font-family: "Microsoft YaHei", 寰蒋闆呴粦, Tahoma, Arial, sans-serif;
+    font-weight: 400;
+    z-index: 2;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 470px;
+    text-overflow: ellipsis;
+    /* 不换行 */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scrollImg-prev {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 39px;
+    left: 0;
+    top: 115px;
+    background: url(../images/arrow-prev-ico.png);
+    z-index: 2;
+}
+
+.scrollImg-prev:hover,
+.scrollImg-next:hover {
+    background-color: #000;
+}
+
+.scrollImg-next {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 39px;
+    top: 115px;
+    right: 0;
+    background: url(../images/arrow-next-ico.png);
+    z-index: 2;
+}
