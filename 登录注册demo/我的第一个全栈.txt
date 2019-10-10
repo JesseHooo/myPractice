@@ -1,0 +1,104 @@
+简单注册登录页面
+
+#前端#
+
+vue-Router 
+ -主页面
+   -登录注册页面
+       -登录页面
+       -注册页面
+-个人主页
+   -个人信息
+       -修改密码
+
+Axios: 发送异步请求并处理响应回调
+
+
+#后端#
+
+express: 构建web服务器
+
+MongoDB: 数据库
+
+
+
+*问题日志*
+01 npm run dev报错
+重装node_modules，知道成功
+
+02关闭eslint
+build/webpack.dev.conf.js中注释lint规则
+
+03axios报错
+axios在vue中的全局注册
+Vue.prototype.$http = axios;
+
+04方法的写法 
+
+05@是事件绑定 ：是数据保定
+
+06跨域请求
+: No 'Access-Control-Allow-Origin' header is present-
+- on the requested resource. Origin 'http://localhost:-
+-8081' is therefore not allowed access.
+
+  跨域方案
+  前端jasonp 不是ajax 不支持post
+  后端cors 真正的ajax
+
+07axios请求后页面自动回到了顶部
+ 原因：<a>自带跳转页面属性
+
+08服务端中express返回app对象的属性和方法认识，以及router的用法
+
+09axios中catch的错误在刷新页面才出现？？和控制响应事件有关？？
+  原因：服务端没有设置响应，加上对响应时间没有进行限制
+
+10FormData 对象
+  FormData 对象的使用：
+  1.用一些键值对来模拟一系列表单控件：即把form中所有表单元素的name与value组装成
+  一个queryString
+  2. 异步上传二进制文件。
+  方法
+  let formData = new FormData()
+  formData.append('user', 'zhang')
+  获取 formData.get('user')  //zhang
+  删除 formData.delete('user')
+  .....
+
+11post请求req中用什么属性获取参数
+使用body-parser中间件
+npm install body-parser--save-dev     //解析,用req.body获取post参数
+
+12e.target.files[0]
+https://blog.csdn.net/ccfxue/article/details/75287365
+
+13后端获取dataFrom对象为空
+原因：body-parser中间件不支持dataform格式
+解决办法：使用multiparty插件
+var multiparty = require('multiparty');
+app.post('/sign_up', (req, res, next) => {
+  let form = new multiparty.Form(/*可以加上上传文件保存的路径*/);
+  form.parse(req,(err,fields,file)=>{    //错误报告/参数/文件
+    console.log(fields,file)
+    res.send('注册成功!!!');
+  })
+})
+
+14mongoose中db.on('error', console.error.bind(console, "connection errer"))
+  原因：（1）第二个参数要求要求是函数而不是返回值，console.error函数bind在console对象上
+            （2）等价于db.on('error', () => { console.error('error') };
+
+15mongoose 中schema的验证器
+  主要验证参数： required max min enum（枚举验证） match maxlength minlength
+  自定义参数：validate：function(word){
+                                            return something()//返回true和false     
+                                     }//根据返回布尔值验证
+
+16Cannot set headers after they are sent to the client
+在一次请求中发生了多次响应
+
+17 api中要求的参数就算没有用到也要传进去，因为（err，res）中err省略了res参数就顶替err的位置，发生错误
+
+18.遍历修改对象的方法
+    Object.keys(fields).forEach(()=>{  })
